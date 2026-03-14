@@ -149,15 +149,6 @@ LRESULT OverlayWindow::HandleMessage(HWND hwnd, UINT message, WPARAM wParam, LPA
             InvalidateRect(hwnd, nullptr, FALSE);
         }
         return 0;
-    case WM_MOUSEMOVE:
-    case WM_LBUTTONDOWN:
-    case WM_RBUTTONDOWN:
-    case WM_MBUTTONDOWN:
-    case WM_MOUSEWHEEL:
-    case WM_MOUSEHWHEEL:
-    case WM_KEYDOWN:
-        app_.DismissMonitorOverlay(monitor_.deviceName);
-        return 0;
     case WM_PAINT: {
         PAINTSTRUCT ps{};
         HDC dc = BeginPaint(hwnd, &ps);
